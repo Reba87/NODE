@@ -1,7 +1,10 @@
 let readline = require('readline')
 let fs = require('fs');
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 987392d13f509b9ae5cd25f7f86e7edf96b2fef5
 
 let rl = readline.createInterface(process.stdin, process.stdout);
 let person = {
