@@ -1,11 +1,7 @@
 let readline = require('readline')
 let fs = require('fs');
 
-// let rl = readline.createInterface(process.stdin, process.stdout);
-// rl.question(`what is your age?`, (age) => {
-//     console.log(`your age is: ` + age);
-//     rl.close()
-// })
+
 
 let rl = readline.createInterface(process.stdin, process.stdout);
 let person = {
