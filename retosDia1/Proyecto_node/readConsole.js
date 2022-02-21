@@ -1,7 +1,8 @@
-function read() {
-    let readline = require('readline')
+let readline = require('readline')
+let callback = require('./writeAndReadObject')
+let rl = readline.createInterface(process.stdin, process.stdout);
 
-    let rl = readline.createInterface(process.stdin, process.stdout);
+function read(callback) {
     let person = {
         name: "",
         surname: "",
@@ -21,19 +22,7 @@ function read() {
                 rl.setPrompt();
                 rl.close()
 
-                let dataPerson = JSON.stringify(person)
-
-                fs.writeFile(`dataPerson.json`, dataPerson, function(err) {
-                    if (err) throw err;
-
-                });
-
-
-
-                fs.readFile(`dataPerson.json`, "utf8", function(err, data) {
-                    if (err) throw err;
-                    console.log(data);
-                })
+                callback(JSON.stringify(person));
             })
         })
 
