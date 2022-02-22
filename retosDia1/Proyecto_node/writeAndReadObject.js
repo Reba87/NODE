@@ -1,22 +1,22 @@
 let fs = require('fs');
 
-function writeAndRead(fichero, objetopersona, callback) {
+function writeAndRead(fichero, objetopersona) {
 
-    fs.writeFile(fichero, JSON.stringify(objetopersona), callback, function(err, dato) {
+    fs.writeFile(fichero, JSON.stringify(objetopersona), function(err, data) {
         if (err) throw err;
+        else {
+            fs.readFile(fichero, "utf8", function(err, data) {
+                if (err) throw err;
+                else {
+                    console.log(JSON.parse(data));
+                }
 
+            })
+        }
     });
-    callback(JSON.parse(dato));
 
-    function callback() {
-        fs.readFile(`dataPerson.json`, "utf8", function(err, data) {
-            if (err) throw err;
-            console.log(data);
-        })
-    }
+
 
 }
 
-
-
-export { writeAndRead }
+module.exports = { writeAndRead }

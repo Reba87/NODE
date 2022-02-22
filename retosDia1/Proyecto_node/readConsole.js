@@ -30,4 +30,4 @@ function read(callback) {
     })
 }
 
-export { read }
+module.exports = { read }

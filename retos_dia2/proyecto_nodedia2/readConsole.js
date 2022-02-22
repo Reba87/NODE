@@ -17,6 +17,7 @@ function readLine() {
         return question;
     }
 
+
 }
 
 
@@ -32,7 +33,7 @@ function consoleRead(question, fichero) {
         })
         .then((result) => {
             fichero.age = result;
-            return getJson(fichero, objetopersona);
+            return getJson(fichero);
         })
         .catch((err) => {
             console.error(err);

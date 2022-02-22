@@ -15,18 +15,6 @@ function pregunta(pregunta) {
     return question;
 }
 
-function getJson() {
-    fs.writeFile(`persona2.json`, JSON.stringify(persona2))
-        .then(() => {
-            return fs.readFile(`persona2.json`, "utf8");
-        })
-        .then((data) => {
-            console.log(JSON.parse(data));
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-}
 
 let persona2 = {
     name: "",
@@ -45,7 +33,16 @@ pregunta("What is your name?")
     })
     .then((result) => {
         persona2.age = result;
-        return getJson(persona2);
+        return fs.writeFile(`persona2.json`, JSON.stringify(persona2))
+            .then(() => {
+                return fs.readFile(`persona2.json`, "utf8");
+            })
+            .then((data) => {
+                console.log(JSON.parse(data));
+            })
+            .catch((err) => {
+                console.log(err);
+            });;
     })
     .catch((err) => {
         console.error(err);

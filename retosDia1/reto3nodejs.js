@@ -1,10 +1,6 @@
 let readline = require('readline')
 let fs = require('fs');
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 987392d13f509b9ae5cd25f7f86e7edf96b2fef5
 
 let rl = readline.createInterface(process.stdin, process.stdout);
 let person = {
@@ -31,14 +27,11 @@ rl.question(`What is your name? `, (respuesta) => {
             fs.writeFile(`dataPerson.json`, dataPerson, function(err) {
                 if (err) throw err;
 
+                fs.readFile(`dataPerson.json`, "utf8", function(err, data) {
+                    if (err) throw err;
+                    console.log(JSON.parse(data));
+                })
             });
-
-
-
-            fs.readFile(`dataPerson.json`, "utf8", function(err, data) {
-                if (err) throw err;
-                console.log(data);
-            })
         })
     })
 
