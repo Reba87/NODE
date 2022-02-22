@@ -9,7 +9,7 @@ function writeAndRead(fichero, objetopersona, callback) {
     callback(JSON.parse(dato));
 
     function callback() {
-        fs.readFile(`dataPerson.json`, "utf8", function(err, dato) {
+        fs.readFile(`dataPerson.json`, "utf8", function(err, data) {
             if (err) throw err;
             console.log(data);
         })
