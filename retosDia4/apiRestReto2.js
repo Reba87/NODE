@@ -124,7 +124,7 @@ function(request, response){
     let resultado = profesionales[request.params.id]
     let message;
     if(profesionales.length > 0 && (id < profesionales.length)){
-        profesionales.splice(id)
+        profesionales.splice(id,1)
         message = {error:false, codigo:200, mensaje:"El profesional ha sido borrado con exito",profesionales}
     }else
     message = {error:false, codigo:200, mensaje:"El usuario no existe",
