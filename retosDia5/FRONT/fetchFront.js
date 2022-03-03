@@ -130,7 +130,7 @@ function postUser()
 function putUser()
 {   
     
-    let profesional = new profess(
+    let profesional = new profess (
         document.getElementById("name").value,
         document.getElementById("age").value,
         document.getElementById("weight").value,
@@ -152,7 +152,6 @@ function putUser()
         method: "PUT"
     }
 
-   
     if(captureId != "") { 
         console.log(url)
 

@@ -96,17 +96,44 @@ app.put(`/profesionales/:id`, function (request, response) {
     let resultado = profesionales[request.params.id];
     let message;
     if (profesionales.length > 0 && id < profesionales.length) {
-        (profesionales[id] = request.body.name),
-        (profesionales[id].age = request.body.age),
-        (profesionales[id].weight = request.body.weight),
-        (profesionales[id].height = request.body.height),
-        (profesionales[id].hairColor = request.body.hairColor),
-        (profesionales[id].eyeColor = request.body.eyeColor),
-        (profesionales[id].isRetired = request.body.isRetired),
-        (profesionales[id].nationality = request.body.nationality),
-        (profesionales[id].oscarNumber = request.body.oscarNumber);
+       if(request.body.name != "")
+       {
+        (profesionales[id].name = request.body.name)
+       }
+       if(request.body.age != "")
+       {
+        (profesionales[id].age = request.body.age)
+       }       
+       if(request.body.weight != "")
+       {
+        (profesionales[id].weight = request.body.weight)
+       }
+       if(request.body.height != "")
+       {
+        (profesionales[id].height = request.body.height)
+       }
+       if(request.body.hairColor != "")
+       {
+        (profesionales[id].hairColor = request.body.hairColor)
+       }     
+       if(request.body.eyeColor != "")
+       {
+        (profesionales[id].eyeColor = request.body.eyeColor)
+       }     
+       if(request.body.isRetired != "")
+       {
+        (profesionales[id].isRetired = request.body.isRetired)
+       }    
+       if(request.body.nationality != "")
+       {
+        (profesionales[id].nationality = request.body.nationality)
+       } 
+       if(request.body.oscarNumber!= "")
+       {
+        (profesionales[id].oscarNumber = request.body.oscarNumber)
+       } 
         
-        message =[resultado];
+        message = resultado;
 
     } else message = {
         error: false,
